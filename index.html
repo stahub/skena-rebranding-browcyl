@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rebranding Browcyl - SKENA</title>
+    <link rel="icon" href="faicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<!-- Header Start-->
+<header id="navigasi" class="fixed bungkus-nav w-full h-[72px] top-0">
+    <nav class="flex items-center w-full h-[72px]">
+        <div
+            class="nav-real real flex flex-row items-center justify-between my-auto mx-[20px] md:mx-[20px] lg:mx-[170px] h-[44px] w-[100%]">
+            <div class="flex">
+                <img src="Logo-Utama.png" width="179" alt="">
+            </div>
+            <div class="flex items-center hamburger h-[44px]">
+                <button id="garistiga" name="garistiga" type="button" class="block absolute right-4 lg:hidden">
+                    <span class="garistiga-line origin-top-left transition duration-300 ease-in-out"></span>
+                    <span class="garistiga-line transition duration-450 ease-in-out"></span>
+                    <span class="garistiga-line origin-bottom-left transition duration-300 ease-in-out"></span>
+                </button>
+                <nav id="nav-menu"
+                    class="hidden absolute p-5 shadow-lg max-w-[100%] w-full right-0 top-[100%] lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none">
+                    <ul class="block lg:flex">
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">Home</a>
+                        </li>
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">Service</a>
+                        </li>
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">About</a>
+                        </li>
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">Works</a>
+                        </li>
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">Blog</a>
+                        </li>
+                        <li class="">
+                            <a href="#"
+                                class="text-base text-dark font-medium py-5 mx-3 flex hover:text-primary">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+            <div class="sosmed-nav flex items-center h-full flex-row hidden lg:flex">
+                <div class="flex w-[25px] h-[25px] mx-[10px] rounded-full justify-center items-center m-auto" style="border: 1px solid black;">
+                    <svg class="flex" width="14px" height="14px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 22H13V14H15.8787L17 10H13V7.00004C13 6.44776 13.4477 6.00004 14 6.00004H17V2C9 1.49998 9 4.50001 9 10H6V14H9V22Z" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                </div>
+                <div class="flex w-[25px] h-[25px] mx-[10px] rounded-full justify-center items-center m-auto" style="border: 1px solid black;">
+                    <svg class="flex" width="12px" height="12px" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                </div>
+                <div class="flex w-[25px] h-[25px] mx-[10px] rounded-full justify-center items-center m-auto" style="border: 1px solid black;">
+                    <svg 
+                    class="flex"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    >
+                    <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z" />
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+//navbar fixed
+window.onscroll = function(){
+    const header = document.querySelector('header');
+    const fixednav = header.offsetTop;
+
+    if(window.pageYOffset > fixednav){
+        header.classList.add('navbar-fixed')
+    }else{
+        header.classList.remove('navbar-fixed')
+    }
+};
+
+//garistiga & nav
+const navi = document.querySelector('#navigasi')
+const garistiga = document.querySelector('#garistiga');
+const navmenu = document.querySelector('#nav-menu');
+
+garistiga.addEventListener('click', function(){
+    navi.classList.toggle('nav-show')
+    garistiga.classList.toggle('garistiga-active');
+    navmenu.classList.toggle('hidden');
+    navmenu.classList.toggle('nav-menu-show');
+});
+</script>
+<!-- Header End-->
+
+<!-- Hero Start -->
+<img src="hero.jpg" width="100%" height="100%" alt="" class="h-auto w-full mt-[72px] lg:mt-0 lg:mt-0">
+<!-- Hero End -->
+
+<!-- Content Start -->
+<div class="w-[95%] sm:w-[90%] md:w-[90%] lg:w-[85%] mx-auto">
+    <div class="w-full my-[55px] mx-auto">
+        <h2 class="text-[#212a73] text-2xl lg:text-[35px]/[35px] font-black my-[20px]">Rebranding Browcyl</h2>
+        <div class="">
+            <ul class="flex flex-col sm:flex-row md:flex-row lg:flex-row mb-[50px] w-[100%]">
+                <li class="w-[100%] sm:w-[25%] md:w-[20%] lg:w-[15%]">
+                    <span class="">
+                        <a class="text-[#b6b6b6] text-sm lg:text-base font-normal my-[20px] mr-[15px]">Client: Browcyl</a> </span>
+                </li>
+                <li class="w-[100%] sm:w-[50%] md:w-[40%] lg:w-[35%]">
+                    <span class="">
+                        <a class="text-[#b6b6b6] text-sm lg:text-base font-normal my-[20px] mr-[15px]">Category: Branding Identity
+                            Development</a> </span>
+                </li>
+            </ul>
+        </div>
+        <div class="">
+            <div class="">
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Think Behind It:</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Memasuki usia 8 tahun, Browcyl sebagai
+                    brownies pisang khas Makassar, ingin hadir dengan tampilan yang
+                    lebih elegan dan simple di hadapan audiens. Skena berkesempatan untuk membantu Browcyl mewujudkan
+                    keinginannya melalui jalan rebranding.</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">The Inspirational Behind It:</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Riset selalu jadi titik berangkat tim
+                    Skena dalam berbagai proyek, termasuk proyek rebranding Browcyl.
+                </p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Tim Skena melakukan riset online dan
+                    offline untuk mendapatkan hasil maksimal terkait apa saja yang perlu
+                    dipertahankan, dan apa saja yang harus digali lebih dalam dari Browcyl.</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Hasil riset menemukan bahwa unsur pisang
+                    adalah hal yang paling diingat dan kuat dari branding Browcyl.
+                    Itulah yang menjadi ide dasar logo terbaru Browcyl.</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Technical Behind It:</p>
+                <p class="mb-[40px] text-lg/[36px] font-normal text-[#1d1d1d]">Lekukan pada pisang menjadi teknik dasar
+                    dalam mengembangkan font logo Browcyl. Selain logo, terdapat
+                    juga turunan logo yang didesain oleh Skena, untuk mendukung tampilan baru Browcyl. Hasil rebranding
+                    ini
+                    langsung menjadi Graphic Standard Manual, mulai kebutuhan digital hingga interior outlet.</p>
+            </div>
+        </div>
+        <h2 class="text-[#212a73] text-[22px]/[22px] lg:text-[24px]/[24px] font-medium mt-[95px] mb-[20px]">Share This Post :</h2>
+        <div class="flex items-center h-full flex-row">
+            <div class="flex w-[45px] h-[45px] mx-[6px] rounded-full">
+                <svg width="100%" height="100%" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <title>facebook_fill</title>
+                    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Brand" transform="translate(-240.000000, -48.000000)" fill-rule="nonzero">
+                            <g id="facebook_fill" transform="translate(240.000000, 48.000000)">
+                                <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" id="MingCute" fill-rule="nonzero">
+                
+                </path>
+                                <path d="M13.5,21.8883 C18.3113,21.1645 22,17.013 22,12 C22,6.47715 17.5228,2 12,2 C6.47715,2 2,6.47715 2,12 C2,17.013 5.68874,21.1645 10.5,21.8883 L10.5,15 L9,15 C8.17157,15 7.5,14.3284 7.5,13.5 C7.5,12.6716 8.17157,12 9,12 L10.5,12 L10.5,10 C10.5,8.067 12.067,6.5 14,6.5 L14.5,6.5 C15.3284,6.5 16,7.17157 16,8 C16,8.82843 15.3284,9.5 14.5,9.5 L14,9.5 C13.7239,9.5 13.5,9.72386 13.5,10 L13.5,12 L15,12 C15.8284,12 16.5,12.6716 16.5,13.5 C16.5,14.3284 15.8284,15 15,15 L13.5,15 L13.5,21.8883 Z" id="路径" fill="#09244B">
+                
+                </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <div class="flex w-[45px] h-[45px] mx-[6px] rounded-full">
+                <svg width="100%px" height="100%px" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="20" fill="#1DA1F2"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z" fill="white"/>
+                    </svg>
+            </div>
+            <div class="flex w-[45px] h-[45px] mx-[6px] rounded-full">
+                <svg width="100%" height="100%" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="20" fill="#0077B5"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.7747 14.2839C18.7747 15.529 17.8267 16.5366 16.3442 16.5366C14.9194 16.5366 13.9713 15.529 14.0007 14.2839C13.9713 12.9783 14.9193 12 16.3726 12C17.8267 12 18.7463 12.9783 18.7747 14.2839ZM14.1199 32.8191V18.3162H18.6271V32.8181H14.1199V32.8191Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M22.2393 22.9446C22.2393 21.1357 22.1797 19.5935 22.1201 18.3182H26.0351L26.2432 20.305H26.3322C26.9254 19.3854 28.4079 17.9927 30.8101 17.9927C33.7752 17.9927 35.9995 19.9502 35.9995 24.219V32.821H31.4922V24.7838C31.4922 22.9144 30.8404 21.6399 29.2093 21.6399C27.9633 21.6399 27.2224 22.4999 26.9263 23.3297C26.8071 23.6268 26.7484 24.0412 26.7484 24.4574V32.821H22.2411V22.9446H22.2393Z" fill="white"/>
+                    </svg>
+            </div>
+        </div>
+        <div class="pembatas mt-[95px]">
+        <div class="flex w-[20px] h-auto mx-auto">
+            <svg width="17px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40.61 40"><defs></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="" fill="#e63d5e" d="M21.56,35.4a4.39,4.39,0,0,0-1.35-3.23L7.48,20a4.4,4.4,0,0,0-6.36.27l0,0a4.41,4.41,0,0,0,.21,6L13.82,38.71A4.4,4.4,0,0,0,17.1,40h0a4.43,4.43,0,0,0,4.43-4.43V35.4Z"></path><path class="" fill="#eac84b" d="M40.59,16.63a4.38,4.38,0,0,0-1.34-3.23l-12.54-12A4.43,4.43,0,0,0,23.77,0H23L22.9,0h-.07l-.16,0h-.05l-.18,0h0l-.19,0h0L22,.25h0a4.43,4.43,0,0,0-2.95,3.84s0,.06,0,.1v.53a.41.41,0,0,1,0,.11V5s0,0,0,.08a.68.68,0,0,0,0,.14.09.09,0,0,0,0,0l0,.16v0a4.49,4.49,0,0,0,1.38,2.33l12.33,12.2a4.41,4.41,0,0,0,3.28,1.27h0a4.43,4.43,0,0,0,4.43-4.43c0-.05,0-.1,0-.15Z"></path><path class="" fill="#212a73" d="M40.61,35.55v-.1a4.39,4.39,0,0,0-1.32-3.26L8.16,1.69a4.42,4.42,0,0,0-7,0h0l-.1.14,0,0L1,2a.41.41,0,0,0,0,.09l-.05.07L.79,2.3l0,.05L.69,2.5l0,0s-.05.1-.07.16v0s0,.11-.07.17,0,0,0,0L.45,3.1v0s0,.11,0,.16v.05a.75.75,0,0,1,0,.16v.06a.78.78,0,0,0,0,.16.13.13,0,0,0,0,.06.77.77,0,0,0,0,.15A.15.15,0,0,0,.27,4a.76.76,0,0,0,0,.15v.4a.57.57,0,0,0,0,.13v0A4.39,4.39,0,0,0,1.79,7.78L32.84,38.72A4.38,4.38,0,0,0,36.36,40a4.43,4.43,0,0,0,4.25-4.43Z"></path></g></g></svg></div>
+        </div>
+        </span>
+    </div>
+</div>
+<!-- Content End -->
+
+<!-- Footer Start -->
+<div class="w-[95%] sm:w-[90%] md:w-[90%] lg:w-[85%] mx-auto">
+    <div class="w-full mx-auto">
+        <div class="">
+            <ul class="flex flex-col sm:flex-row md:flex-row lg:flex-row mt-[-3%] w-[100%] justify-between">
+                <li class="">
+                        <a class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[50%] text-[#b6b6b6] text-sm lg:text-base font-bold mb-[20px] mr-[15px]">PREVIOUS ARTICLE</a>
+                </li>
+                <li class="">
+                        <a class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[50%] right-0 text-[#b6b6b6] text-sm lg:text-base font-bold my-[20px]">NEXT ARTICLE</a>
+                </li>
+            </ul>
+            <ul class="flex flex-col sm:flex-col md:flex-col lg:flex-row mb-[70px] w-[100%] justify-between">
+                <li class="">
+                        <a class="w-[100%] lg:w-[50%] text-[#e63d5e] text-sm lg:text-base font-normal my-[20px] mr-[15px]">Coba Rasanya Jadi Kurir Paket, Dengan AR Filter Instagram Lion Parcel</a>
+                </li>
+                <li class="">
+                        <a class="w-[100%] lg:w-[50%] right-0 text-[#e63d5e] text-sm lg:text-base font-normal my-[20px]">AR Filter Instagram Kartu Lebaran Untuk Narasi</a>
+                </li>
+            </ul>
+        </div>
+        <div class="flex flex-col sm:flex-col md:flex-col lg:flex-row mt-[-3%] w-[100%] justify-between my-[50px]">
+            <div class="w-[100%] sm:w-[100%] md:w-[100%] lg:w-[30%] mb-[20px] mr-[15px]">
+                    <div class="">
+                        <img src="Logo-Utama.png" width="200px" alt="" class="mb-[15px]">
+                        <div class="">
+                            <div class="">
+                            <div class="">
+                                <ul class="">
+                                <li class="">
+                                <a href="#" class="flex flex-row h-[50px]">
+                                    <span class="flex items-center h-full">
+                                    <svg width="17px" height="20px" xmlns="#" class="mr-[10px]" viewBox="0 0 59.71 59.71"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M41.39,43.23a1.83,1.83,0,0,1-1.29-.54L34.42,37A1.83,1.83,0,0,1,37,34.42l5.68,5.68a1.84,1.84,0,0,1-1.3,3.13Z"></path><path d="M21.1,42.21A21.11,21.11,0,1,1,42.21,21.1,21.13,21.13,0,0,1,21.1,42.21Zm0-36.64A15.54,15.54,0,1,0,36.64,21.1,15.55,15.55,0,0,0,21.1,5.57Z"></path><path d="M53.45,59.71a4.1,4.1,0,0,1-2.91-1.21L38.7,46.66a4.09,4.09,0,0,1,0-5.81l2.15-2.15a4.11,4.11,0,0,1,5.81,0h0L58.5,50.54a4.09,4.09,0,0,1,0,5.81L56.36,58.5A4.14,4.14,0,0,1,53.45,59.71Zm-11.32-16L53.45,55.07l1.62-1.63L43.76,42.13Z"></path></g></g></svg></span>
+                                    <span class="flex items-center h-full">Jl. Darmawangsa X No.A20 <br>Jakarta Selatan, DKI Jakarta</span>
+                                </a>
+                                </li>
+                                <li class="flex flex-row h-[30px]">
+                                <a href="#" class="flex flex-row w-full">
+                                    <span class="flex items-center h-full">
+                                    <svg width="17px" class="mr-[10px]" xmlns="#" viewBox="0 0 68.83 51.78"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M65.66,51.78h-63A2.68,2.68,0,0,1,0,49.11v-.53H0V2.67A2.68,2.68,0,0,1,2.67,0H66.16a2.67,2.67,0,0,1,2.67,2.67V48.58a2.66,2.66,0,0,1-1,2.08A2.64,2.64,0,0,1,65.66,51.78Zm-57-5.34H59.12L41.88,29.6l-6,5.93a2.66,2.66,0,0,1-3.75,0l-6.1-6Zm37-20.6L63.49,43.25v-35ZM5.34,9V42.24l16.89-16.5ZM9.21,5.34,34,29.88,58.81,5.34Z"></path></g></g></svg>						</span>
+                                    <span class="flex items-center h-full">halo@skena.co.id</span>
+                                </a>
+                                </li>
+                                <li class="flex flex-row h-[30px]">
+                                <a href="#" class="flex flex-row w-full">
+                                    <span class="flex items-center h-full">
+                                    <svg width="17px" class="mr-[10px]" xmlns="#" viewBox="0 0 67.6 49.93"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M21,49.93a2.61,2.61,0,0,1-.93-.18,2.56,2.56,0,0,1-.76-.48l-.16-.16h0a2.54,2.54,0,0,1-.43-.67,2.37,2.37,0,0,1-.21-.88h0a.2.2,0,0,1,0-.07L17.8,20,.81,4.49A2.5,2.5,0,0,1,0,2.6v0A2.5,2.5,0,0,1,2.5.06L64.8,0h0A2.47,2.47,0,0,1,66,.33a2.5,2.5,0,0,1,.84,4.07L22.78,49.18h0l0,0h0a2.49,2.49,0,0,1-.75.51,2.36,2.36,0,0,1-.88.2H21Zm1.82-29.32.53,20.87L56,8.37,23.21,20.5A2.85,2.85,0,0,1,22.82,20.61ZM8.85,5.06l12.08,11a2.77,2.77,0,0,1,.54-.28L50.62,5Z"></path></g></g></svg>						</span>
+                                    <span class="flex items-center h-full">0811-4220-204</span>
+                                </a>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[100%] sm:w-[100%] md:w-[100%] lg:w-[30%] mb-[20px] mr-[15px]">
+                    <div class="">
+                        <h2 class="text-[#e63d5e] text-[28px]/[36px] font-black mb-[15px]">
+                        USEFUL LINKS</h2>
+                        <div class="">
+                            <div class="">
+                                <ul class="">
+                                <li class="">
+                                    <a href="#" class="flex h-[30px] flex-row w-full">
+                                        <span class="flex items-center h-full">
+                                        <svg width="17px" class="mr-[10px]" xmlns="#" viewBox="0 0 59.71 59.71"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M41.39,43.23a1.83,1.83,0,0,1-1.29-.54L34.42,37A1.83,1.83,0,0,1,37,34.42l5.68,5.68a1.84,1.84,0,0,1-1.3,3.13Z"></path><path d="M21.1,42.21A21.11,21.11,0,1,1,42.21,21.1,21.13,21.13,0,0,1,21.1,42.21Zm0-36.64A15.54,15.54,0,1,0,36.64,21.1,15.55,15.55,0,0,0,21.1,5.57Z"></path><path d="M53.45,59.71a4.1,4.1,0,0,1-2.91-1.21L38.7,46.66a4.09,4.09,0,0,1,0-5.81l2.15-2.15a4.11,4.11,0,0,1,5.81,0h0L58.5,50.54a4.09,4.09,0,0,1,0,5.81L56.36,58.5A4.14,4.14,0,0,1,53.45,59.71Zm-11.32-16L53.45,55.07l1.62-1.63L43.76,42.13Z"></path></g></g></svg></span>
+                                        <span class="flex items-center h-full">SERVICES</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="flex h-[30px] flex-row w-full">
+                                        <span class="flex items-center h-full">
+                                        <svg width="17px" class="mr-[10px]" xmlns="#" viewBox="0 0 64.47 58.1"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M43.24,58.1a2.5,2.5,0,0,1-1.82-.79l-9.21-9.83H2.5A2.5,2.5,0,0,1,0,45V2.5A2.5,2.5,0,0,1,2.5,0H62a2.5,2.5,0,0,1,2.5,2.5V45a2.5,2.5,0,0,1-2.5,2.5H51.63L45.33,57a2.51,2.51,0,0,1-1.88,1.11ZM35.13,43.27l7.78,8.31,5.29-8a2.46,2.46,0,0,1,1.11-.92,2.31,2.31,0,0,1,.74-.19h9.42V5H5V42.48H33.34a2.3,2.3,0,0,1,.94.2,2.53,2.53,0,0,1,.82.57Z"></path></g></g></svg></span>
+                                        <span class="flex items-center h-full">ABOUT</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="flex h-[30px] flex-row w-full">
+                                        <span class="flex items-center h-full">
+                                        <svg width="17px" class="mr-[10px]" xmlns="#" viewBox="0 0 67.12 60.44"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M33.56,60.44a2.48,2.48,0,0,1-1.06-.24,2.18,2.18,0,0,1-.5-.31c-5.77-4.4-11.69-10.58-18-17.13-2.59-2.71-5.28-5.52-8-8.24C-3.2,25.29-.78,12.9,6.19,5.93c6.39-6.39,17.44-9,27.37-.62,9.93-8.42,21-5.77,27.37.62,7,7,9.39,19.36.16,28.59-2.72,2.72-5.41,5.53-8,8.24-6.27,6.55-12.19,12.73-18,17.13a2.13,2.13,0,0,1-.49.31,2.49,2.49,0,0,1-1.07.24ZM20,5A14.66,14.66,0,0,0,9.73,9.47C4.34,14.85,2.56,24,9.57,31c2.76,2.75,5.47,5.58,8.09,8.31,5.58,5.83,10.88,11.36,15.9,15.46,5-4.09,10.33-9.63,15.91-15.45,2.61-2.74,5.32-5.57,8.08-8.32,7-7,5.23-16.14-.15-21.52s-14.1-7-22.07,1h0l0,0h0l0,0H35.2a2.46,2.46,0,0,1-1.5.61h-.28a2.45,2.45,0,0,1-1.52-.63h0l0,0h0C27.91,6.6,23.82,5,20,5Z"></path></g></g></svg>		</span>
+                                        <span class="flex items-center h-full">WORK</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="flex h-[30px] flex-row w-full">
+                                        <span class="flex items-center h-full">
+                                        <svg width="17px" class="mr-[10px]" viewBox="0 0 50.44 64.9"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M46.9,64.9a3.51,3.51,0,0,1-1.81-.5L24.66,52.19l-18.19,10a3.55,3.55,0,0,1-6.47-2V3.54A3.54,3.54,0,0,1,3.54,0H46.9a3.53,3.53,0,0,1,3.54,3.54V60.15a3.08,3.08,0,0,1,0,.61A3.55,3.55,0,0,1,46.9,64.9ZM24.82,44,43.36,55.12v-48H7.08V53.74Z"></path></g></g></svg></span>
+                                        <span class="flex items-center h-full">BLOG</span>
+                                    </a>
+                                </li>
+                                <li class="]">
+                                    <a href="#" class="flex h-[30px] flex-row w-full">
+                                        <span class="flex items-center h-full">
+                                            <svg width="17px" viewBox="0 0 846.66 846.66" class="mr-[10px]" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><g id="Layer_x0020_1"><path class="" d="M138.64 212.28l121.09 0c10.3,-74.25 74.4,-130.24 149.55,-130.24l28.1 0c75.15,0 139.25,55.99 149.55,130.24l121.09 0c71.5,0 129.92,58.42 129.92,129.93l0 292.48c0,71.51 -58.42,129.93 -129.92,129.93l-569.38 0c-71.5,0 -129.92,-58.42 -129.92,-129.93l0 -292.48c0,-71.51 58.42,-129.93 129.92,-129.93zm99.12 350.99l-56.14 79.83c-15.64,22.24 -49.49,-1.58 -33.85,-23.81l56.15 -79.85c-18.78,-19.51 -30.33,-46.05 -30.33,-75.27 0,-59.96 48.61,-108.58 108.57,-108.58 59.96,0 108.57,48.62 108.57,108.58 0,59.95 -48.61,108.57 -108.57,108.57 -15.82,0 -30.84,-3.39 -44.4,-9.47zm44.4 -166.21c-37.06,0 -67.11,30.05 -67.11,67.11 0,37.06 30.05,67.1 67.11,67.1 37.06,0 67.11,-30.04 67.11,-67.1 0,-37.06 -30.05,-67.11 -67.11,-67.11zm182.11 266.16c-27.27,0 -27.27,-41.47 0,-41.47l192.07 0c27.27,0 27.27,41.47 0,41.47l-192.07 0zm0 -122.19c-27.27,0 -27.27,-41.47 0,-41.47l192.07 0c27.27,0 27.27,41.47 0,41.47l-192.07 0zm0 61.09c-27.27,0 -27.27,-41.46 0,-41.46l192.07 0c27.27,0 27.27,41.46 0,41.46l-192.07 0zm0 -122.19c-27.27,0 -27.27,-41.47 0,-41.47l192.07 0c27.27,0 27.27,41.47 0,41.47l-192.07 0zm0 -115.05c-27.27,0 -27.27,-41.46 0,-41.46l154.04 0c27.28,0 27.28,41.46 0,41.46l-154.04 0zm-162.51 -152.6l243.14 0c-9.92,-51.16 -55.22,-88.77 -107.52,-88.77l-28.1 0c-52.3,0 -97.6,37.61 -107.52,88.77zm406.26 41.46c-189.8,0 -379.58,0 -569.38,0 -48.6,0 -88.46,39.86 -88.46,88.47l0 292.48c0,48.61 39.85,88.46 88.46,88.46l569.38 0c48.6,0 88.46,-39.85 88.46,-88.46l0 -292.48c0,-48.61 -39.86,-88.47 -88.46,-88.47z"/></g></svg>
+                                        </span>
+                                        <span class="flex items-center h-full">CAREER</span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                        <a href="#" class="flex h-[30px] flex-row w-full">
+                                            <span class="flex items-center h-full">
+                                            <svg width="17px" class="mr-[10px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 67.6 49.93"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M21,49.93a2.61,2.61,0,0,1-.93-.18,2.56,2.56,0,0,1-.76-.48l-.16-.16h0a2.54,2.54,0,0,1-.43-.67,2.37,2.37,0,0,1-.21-.88h0a.2.2,0,0,1,0-.07L17.8,20,.81,4.49A2.5,2.5,0,0,1,0,2.6v0A2.5,2.5,0,0,1,2.5.06L64.8,0h0A2.47,2.47,0,0,1,66,.33a2.5,2.5,0,0,1,.84,4.07L22.78,49.18h0l0,0h0a2.49,2.49,0,0,1-.75.51,2.36,2.36,0,0,1-.88.2H21Zm1.82-29.32.53,20.87L56,8.37,23.21,20.5A2.85,2.85,0,0,1,22.82,20.61ZM8.85,5.06l12.08,11a2.77,2.77,0,0,1,.54-.28L50.62,5Z"></path></g></g></svg></span>
+                                            <span class="flex items-center h-full">CONTACT</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="w-[100%] sm:w-[100%] md:w-[100%] lg:w-[30%] mb-[20px] mr-[15px]">
+                    <div class="">
+                        <h2 class="text-[#e63d5e] text-[28px]/[36px] font-black my-auto mb-[25px]">
+                        WE ARE HERE</h2>
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=kroma&amp;t=h&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://connectionsgame.org/">Connections Puzzle</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:300px;}.gmap_iframe {width:100%!important;height:300px!important;}</style>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<body>
+</body>
+
+</html>
